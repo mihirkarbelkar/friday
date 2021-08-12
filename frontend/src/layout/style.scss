@@ -1,0 +1,53 @@
+@import 'app/scss/base';
+
+.site-layout {
+  padding: 0px !important;
+  margin: 0px;
+
+  .navbar {
+    border: 1px solid $borderColor;
+    border-width: 0 0 2px 0;
+    padding: 0px !important;
+    height: 75px;
+
+    &.bg-dark {
+      background-color: $primaryColor !important;
+    }
+
+    .navbar-brand {
+      background: linear-gradient(45deg, #201e3e, #2b2746);
+      padding-right: 15px;
+    }
+
+    .navbar-collapse {
+      padding-left: 25px;
+    }
+
+    .nav-link {
+      font-size: 18px;
+      padding: 10px 30px !important;
+      &.active {
+        @include gradientBorder();
+      }
+    }
+
+    .logo {
+      margin-left: 25px;
+      margin-right: 10px;
+    }
+  }
+  .sidebar-and-main {
+    height: calc(100% - 65px);
+    .site-sidebar {
+      height: 100%;
+      width: 80px;
+      background-color: #0b081e;
+    }
+    .content-container {
+      width: calc(100% - 80px);
+      padding: 30px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}

@@ -4,6 +4,9 @@ import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './errorBoundary';
 import { RecoilRoot } from 'recoil';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'typeface-roboto';
+import 'app/scss/rootStyles.scss';
 
 ReactDOM.render(
   <ErrorBoundary>

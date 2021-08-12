@@ -1,0 +1,61 @@
+@import 'base';
+
+@mixin fonts() {
+  $types: (
+      ('bold', 'Roboto-Bold'),
+      ('regular', 'Roboto-Regular'),
+      ('light', 'Roboto-Light'),
+      ('italic', 'Roboto-Italic'),
+      ('thin', 'Roboto-Thin'),
+  );
+  @each $type in $types {
+    .font-#{nth($type, 1)} { font-family: nth($type, 2); }
+    %font-#{nth($type, 1)} { font-family: nth($type, 2); }
+  }
+}
+@include fonts();
+
+html, body, #root, #root > div {
+  height: 100%;
+}
+body {
+  font-family: 'Roboto';
+  font-size: 14px;
+  margin: 0px;
+  color: $textColor;
+  height: 100%;
+  background-color: $primaryColor;
+}
+
+.gradient-border {
+  @include gradientBorder();
+}
+
+.nav-tabs {
+  border-bottom: 2px solid $borderColor;
+  .nav-item {
+    .nav-link {
+      color: $secondaryTextColor;
+      padding: 15px 20px;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $textColor;
+        border-color: transparent !important;
+      }
+      &.active {
+        font-weight: bold;
+        color: $textColor;
+        background-color: transparent;
+        border-width: 0px 0 5px 0;
+
+        border-style: solid;
+        border-width: 3px;
+        border-image: linear-gradient(to left, #2f63e0, #b374ea) 
+                100% 0 100% 0/0px 0 3px 0 stretch;
+      }
+    }
+  }
+}
