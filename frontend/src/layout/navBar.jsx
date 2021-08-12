@@ -7,10 +7,10 @@ const NavBar = () => {
 
   const menus = [{
     label: 'Explore',
-    link: '/dashbpoard'
+    link: '/dashboard'
   }, {
     label: 'Watchlist',
-    link: '/watchlist'
+    link: '/investments'
   }, {
     label: 'AI Help',
     link: '/ai'
@@ -36,9 +36,11 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" activeKey={history.location.pathname}>
-            <Nav.Link as={Link} to="/dashboard" className={history.location.pathname === '/dashboard' ? 'active' : ''}>Explore</Nav.Link>
-            <Nav.Link as={Link} to="/investments" className={history.location.pathname === '/investments' ? 'active' : ''}>Watchlist</Nav.Link>
-            <Nav.Link as={Link} to="/ai" className={history.location.pathname === '/ai' ? 'active' : ''}>AI Help</Nav.Link>
+            {menus.map((menu) => (
+              <Nav.Link as={Link} to={menu.link} className={history.location.pathname.startsWith(menu.link) ? 'active' : ''}>
+                {menu.label}
+              </Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </>

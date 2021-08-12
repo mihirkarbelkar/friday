@@ -1,0 +1,69 @@
+@import 'app/scss/base';
+
+.step-quiz-container {
+  .wizard-question {
+    color: $secondaryTextColor;
+    .badge {
+      vertical-align: bottom;
+      background-color: #2d3c46 !important;
+      border: 1px solid $success;
+      font-weight: normal;
+      font-size: 12x;
+      color: $success;
+    }
+  }
+
+  .amount-selector-container {
+    .amount-selection-button {
+      background-color: $secondaryTextColor;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-right: 20px;
+      cursor: pointer;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px solid $textColor;
+      }
+    }
+    .other-amount-box {
+      span, input {
+        padding: 3px 10px;
+        background-color: transparent;
+        color: $textColor;
+      }
+      input:focus {
+        background-color: transparent !important;
+      }
+    }
+
+    
+  }
+
+  
+
+  .react-datepicker-wrapper {
+    .react-datepicker__input-container {
+      display: flex;
+    }
+
+    width: 150px;
+    otherdate {
+      background-color: $secondaryTextColor;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-right: 20px;
+      cursor: pointer;
+      border: 1px solid transparent;
+  
+      &:hover {
+        border: 1px solid $textColor;
+      }
+    }
+    otherdate {
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+}
