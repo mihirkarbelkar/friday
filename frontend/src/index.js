@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
+import ErrorBoundary from './errorBoundary';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ErrorBoundary>
+    <React.StrictMode>
+      <Routes />
+    </React.StrictMode>
+  </ErrorBoundary>,
   document.getElementById('root')
 );
 
