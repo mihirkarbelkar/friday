@@ -337,6 +337,8 @@ module.exports = function (webpackEnv) {
         'app': path.resolve(__dirname, '../src/'),
         'components': path.resolve(__dirname, '../src/components/'),
         'containers': path.resolve(__dirname, '../src/containers/'),
+        'atoms': path.resolve(__dirname, '../src/recoil/atoms'),
+        'selectors': path.resolve(__dirname, '../src/recoil/selectors'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

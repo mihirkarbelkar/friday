@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './errorBoundary';
+import { RecoilRoot } from 'recoil';
 
 ReactDOM.render(
   <ErrorBoundary>
     <React.StrictMode>
-      <Routes />
+      <RecoilRoot>
+        <Routes />
+      </RecoilRoot>
     </React.StrictMode>
   </ErrorBoundary>,
   document.getElementById('root')
