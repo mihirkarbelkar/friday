@@ -10,6 +10,10 @@
     padding: 0px !important;
     height: 75px;
 
+    .navbar-toggler {
+      margin-right: 15px;
+    }
+
     &.bg-dark {
       background-color: $primaryColor !important;
     }
@@ -21,6 +25,7 @@
 
     .navbar-collapse {
       padding-left: 15px;
+      background-color: $primaryColor;
     }
 
     .nav-link {
@@ -42,6 +47,7 @@
       border: 2px solid $secondaryTextColor;
       border-radius: 50%;
       background-color: $secondaryColor;
+      cursor: pointer;
 
       img {
         height: 100%;
