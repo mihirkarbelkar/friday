@@ -7,7 +7,7 @@ const NavBar = () => {
 
   const menus = [{
     label: 'Explore',
-    link: '/dashboard'
+    link: '/explore'
   }, {
     label: 'Watchlist',
     link: '/investments'

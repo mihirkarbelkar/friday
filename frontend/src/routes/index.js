@@ -9,7 +9,7 @@ const Routes = () => {
     <>
       <Router history={history}>
         <Switch>
-          <Route path="/" exact render={() => <Redirect to="/dashboard" />} />
+          <Route path="/" exact render={() => <Redirect to="/explore" />} />
           <Layout path="*" exact component={Layout} history={history} />
         </Switch>
       </Router>

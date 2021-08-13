@@ -20,7 +20,7 @@ const Layout = (props) => {
       <div className="d-flex sidebar-and-main">
         <SideBar />
         <div className="content-container">
-          <Route path="/dashboard" exact component={Dashboard} history={history} />
+          <Route path="/explore" exact component={Dashboard} history={history} />
           <Route path="/ai" exact component={AI} history={history} />
           <Route path="/profile" exact component={UserProfile} history={history} />
           <Route path="/ai/stocks" exact component={AIStocks} history={history} />
