@@ -13,17 +13,16 @@
   .step-quiz-1 {
     background: url('../../../images/invest-robo.png');
     @include backgroundPos();
-    background-size: 480px;
+    
   }
   .step-quiz-2 {
     background: url('../../../images/return-robo.png');
     @include backgroundPos();
-    background-size: 220px;
+    
   }
   .step-quiz-3 {
     background: url('../../../images/terms-robo.png');
     @include backgroundPos();
-    background-size: 220px;
   }
 
   .wizard-question {
