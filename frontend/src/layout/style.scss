@@ -10,6 +10,10 @@
     padding: 0px !important;
     height: 75px;
 
+    .navbar-toggler {
+      margin-right: 15px;
+    }
+
     &.bg-dark {
       background-color: $primaryColor !important;
     }
@@ -20,14 +24,28 @@
     }
 
     .navbar-collapse {
-      padding-left: 25px;
+      padding-left: 15px;
+      background-color: $primaryColor;
     }
 
     .nav-link {
       font-size: 18px;
       padding: 10px 30px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       &.active {
         @include gradientBorder();
+      }
+
+      .nav-tag {
+        padding: 1px 5px;
+        background: linear-gradient(to right, #b374ea, #2f63e0);
+        font-size: 10px;
+        border-radius: 2px;
+        margin-left: 5px;
+        position: relative;
       }
     }
 
@@ -35,9 +53,23 @@
       margin-left: 25px;
       margin-right: 10px;
     }
+
+    .profile-avatar {
+      height: 50px;
+      width: 50px;
+      border: 2px solid $secondaryTextColor;
+      border-radius: 50%;
+      background-color: $secondaryColor;
+      cursor: pointer;
+
+      img {
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
   }
   .sidebar-and-main {
-    height: calc(100% - 65px);
+    height: calc(100% - 78px);
     .site-sidebar {
       height: 100%;
       width: 80px;

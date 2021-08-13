@@ -3,6 +3,9 @@ $secondaryColor: #0b081e;
 $borderColor: #1a173a;
 $textColor: #dbdadf;
 $secondaryTextColor: #7a749c;
+$tertiaryColor: #231c3f;
+$success: #86eb8a;
+$tertiaryTextColor: #61568d;
 
 @mixin gradientBorder() {
   background-image: radial-gradient(circle at 100% 100%, transparent 7px, #b374ea 7px, #b374ea 9px, transparent 9px), linear-gradient(to right, #b374ea, #2f63e0), radial-gradient(circle at 0% 100%, transparent 7px, #2f63e0 7px, #2f63e0 9px, transparent 9px), linear-gradient(to bottom, #2f63e0, #2f63e0), radial-gradient(circle at 0% 0%, transparent 7px, #2f63e0 7px, #2f63e0 9px, transparent 9px), linear-gradient(to left, #2f63e0, #b374ea), radial-gradient(circle at 100% 0%, transparent 7px, #b374ea 7px, #b374ea 9px, transparent 9px), linear-gradient(to top, #b374ea, #b374ea);

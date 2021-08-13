@@ -19,13 +19,6 @@ const AddedTag = () => {
   return <div className="added-tag secondary-text-color">Added</div>;
 };
 const Dashboard = () => {
-  const sample = useRecoilValue(sampleState);
-  const setSampleVal = useSetRecoilState(sampleState);
-
-  useEffect(() => {
-    setSampleVal("testing recoil");
-  }, []);
-
   return (
     <Tabs defaultActiveKey="stocks" className="mb-3">
       <Tab eventKey="overview" title="Overview">
@@ -82,7 +75,7 @@ const Dashboard = () => {
       <Tab eventKey="mf" title="Mutual Funds">
         asf
       </Tab>
-      <Tab eventKey="crypto" title="Crypto" disabled>
+      <Tab eventKey="crypto" title="Crypto">
         sdafd
       </Tab>
     </Tabs>
