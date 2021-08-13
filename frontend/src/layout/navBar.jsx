@@ -42,6 +42,9 @@ const NavBar = () => {
               </Nav.Link>
             ))}
           </Nav>
+          <div className="justify-content-end profile-avatar mx-4">
+            <img src="/images/avatar.jpeg" alt="avatar" />
+          </div>
         </Navbar.Collapse>
       </>
     </Navbar>

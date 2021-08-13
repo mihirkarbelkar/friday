@@ -8,6 +8,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { faLevelDownAlt } from '@fortawesome/free-solid-svg-icons';
 import { addDaysToDate } from 'app/utils/date';
 import dummy from 'app/constants/dummy';
+import { formatPrice } from 'app/utils/common';
 import 'react-datepicker/dist/react-datepicker.css';
 import './style.scss';
 
@@ -47,11 +48,11 @@ const AiWizard = (props) => {
       <div className={`step-quiz-1 h-100 ${step !== 1 ? 'd-none' : ''}`}>
         <h3 className="wizard-question">
           01. How much would you like to invest?
-          <Badge bg="success" className="mx-3">Wallet Balance: &#8377; 1,00,000</Badge>
+          <Badge bg="success" className="mx-3">Wallet Balance: &#8377; {formatPrice(100000)}</Badge>
         </h3>
         <div className="d-flex amount-selector-container my-3">
-          <div className="amount-selection-button" role="presentation" onClick={() => handleAmount(10000)}>&#8377; 10,0000</div>
-          <div className="amount-selection-button" role="presentation" onClick={() => handleAmount(20000)}>&#8377; 20,0000</div>
+          <div className="amount-selection-button" role="presentation" onClick={() => handleAmount(10000)}>&#8377; {formatPrice(10000)}</div>
+          <div className="amount-selection-button" role="presentation" onClick={() => handleAmount(20000)}>&#8377; {formatPrice(20000)}</div>
           <div className="amount-selection-button" role="presentation" onClick={() => setIsOtherAmount(true)}>Other</div>
           {isOtherAmount && (
             <Col xs="auto" className="other-amount-box">

@@ -35,9 +35,22 @@
       margin-left: 25px;
       margin-right: 10px;
     }
+
+    .profile-avatar {
+      height: 50px;
+      width: 50px;
+      border: 2px solid $secondaryTextColor;
+      border-radius: 50%;
+      background-color: $secondaryColor;
+
+      img {
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
   }
   .sidebar-and-main {
-    height: calc(100% - 65px);
+    height: calc(100% - 78px);
     .site-sidebar {
       height: 100%;
       width: 80px;

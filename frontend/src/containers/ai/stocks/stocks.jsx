@@ -18,7 +18,7 @@ const Stocks = () => {
         <Breadcrumb.Item active>Stocks</Breadcrumb.Item>
       </Breadcrumb>
       <Header title="AI Help" />
-      <StepIndicator total={3} current={step} />
+      <StepIndicator total={3} current={step} onClick={setStep} />
       <AIWizard step={step} atom={aiStocks} onContinue={setStep} onFinish={() => null} onCancel={() => history.push('/ai')} />
     </div>
   );
