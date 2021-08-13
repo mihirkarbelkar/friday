@@ -13,13 +13,9 @@ const NavBar = () => {
     link: '/investments'
   }, {
     label: 'AI Help',
-    link: '/ai'
+    link: '/ai',
+    tag: 'NEW'
   }];
-  
-  const handleNavClick = (e, path) => {
-    e.preventDefault();
-    history.push(path);
-  };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="w-100">
@@ -38,7 +34,7 @@ const NavBar = () => {
           <Nav className="me-auto" activeKey={history.location.pathname}>
             {menus.map((menu) => (
               <Nav.Link as={Link} to={menu.link} className={history.location.pathname.startsWith(menu.link) ? 'active' : ''}>
-                {menu.label}
+                {menu.label} {menu.tag && (<span className="nav-tag">{menu.tag}</span>)}
               </Nav.Link>
             ))}
           </Nav>
