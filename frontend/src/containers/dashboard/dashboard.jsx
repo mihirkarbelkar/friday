@@ -1,7 +1,13 @@
 import React from "react";
 import { Tabs, Tab } from "react-bootstrap";
 import { Card } from "components";
-import { dashboardStocks, newsList, stockSummary } from "atoms/dashboard";
+import {
+  dashboardStocks,
+  newsList,
+  stockSummary,
+  gainersList,
+  losersList,
+} from "atoms/dashboard";
 import { useRecoilValue } from "recoil";
 import StockList from "./stockList";
 import NewsList from "./newsList";
@@ -14,7 +20,14 @@ const AddedTag = () => {
 };
 
 const InvestmentBlock = (props) => {
-  const { dashboardOverview, latestNews, investmentSummary, type } = props;
+  const {
+    dashboardOverview,
+    latestNews,
+    investmentSummary,
+    type,
+    gainersData,
+    loserData,
+  } = props;
   return (
     <div className="d-flex explore-investment-wrapper flex-column">
       <div className="d-flex first-row">
@@ -54,14 +67,14 @@ const InvestmentBlock = (props) => {
       <div className="d-flex second-row">
         <Card title="Top Gainers" className="top-gainers">
           <StockList
-            list={dashboardOverview}
+            list={gainersData}
             cols={["label", "price"]}
             type={`${type}`}
           />
         </Card>
         <Card title="Top Losers" className="top-losers">
           <StockList
-            list={dashboardOverview}
+            list={loserData}
             cols={["label", "price"]}
             type={`${type}`}
           />
@@ -77,7 +90,8 @@ const Dashboard = () => {
   const dashboardOverview = useRecoilValue(dashboardStocks);
   const latestNews = useRecoilValue(newsList);
   const investmentSummary = useRecoilValue(stockSummary);
-
+  const gainersData = useRecoilValue(gainersList);
+  const loserData = useRecoilValue(losersList);
   return (
     <Tabs defaultActiveKey="stocks" className="mb-3">
       <Tab eventKey="stocks" title="Stocks">
@@ -87,6 +101,8 @@ const Dashboard = () => {
           latestNews={latestNews["stocks"]}
           investmentSummary={investmentSummary["stocks"]}
           tab={"Stocks"}
+          gainersData={gainersData["stocks"]}
+          loserData={loserData["stocks"]}
         />
       </Tab>
       <Tab eventKey="mf" title="Mutual Funds">
@@ -96,6 +112,8 @@ const Dashboard = () => {
           latestNews={latestNews["mf"]}
           investmentSummary={investmentSummary["mf"]}
           tab={"Mutual Funds"}
+          gainersData={gainersData["stocks"]}
+          loserData={loserData["stocks"]}
         />
       </Tab>
       <Tab eventKey="crypto" title="Crypto">
@@ -105,6 +123,8 @@ const Dashboard = () => {
           latestNews={latestNews["crypto"]}
           investmentSummary={investmentSummary["crypto"]}
           tab={"Crypto"}
+          gainersData={gainersData["stocks"]}
+          loserData={loserData["stocks"]}
         />
       </Tab>
     </Tabs>
