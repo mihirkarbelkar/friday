@@ -1,0 +1,15 @@
+@import "app/scss/base";
+
+.card {
+  padding: 10px 20px;
+  background-color: #2f2b50;
+  .card-header {
+    border-bottom: 2px solid $secondaryTextColor;
+    padding: 20px 0;
+    font-size: 1.3rem;
+  }
+  .card-body {
+    padding: 0 0 20px;
+  }
+  // #2F2B50;
+}

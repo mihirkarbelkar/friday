@@ -1,10 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css'; // So it doesnt override component styles
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './errorBoundary';
 import { RecoilRoot } from 'recoil';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-roboto';
 import 'app/scss/rootStyles.scss';
 

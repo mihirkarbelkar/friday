@@ -1,0 +1,26 @@
+@import "app/scss/base";
+
+.inv-list-group {
+  .list-group-item {
+    background-color: #2f2b50;
+    border: none;
+    color: $textColor;
+    padding: 5px 0;
+  }
+  .inv-list-item {
+    border-top: 2px solid $secondaryTextColor;
+    padding: 5px 0;
+    .inv-list-item-img {
+      height: 50px;
+      width: 50px;
+      border-radius: 12%;
+    }
+  }
+}
+
+.added-tag {
+  background-color: #2a274b;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
+}
