@@ -1,0 +1,17 @@
+@import 'app/scss/base';
+
+.summary-graph-wrapper {
+  .summary-graph-header {
+    border: 1px solid $secondaryTextColor;
+    border-width: 0 0 1px 0;
+    .detail-icon {
+      height: 40px;
+      width: 40px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .symbol-detail {
+      font-size: 25px;
+    }
+  }
+}

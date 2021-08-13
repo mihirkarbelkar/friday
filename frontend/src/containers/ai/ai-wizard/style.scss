@@ -27,16 +27,6 @@
 
   .wizard-question {
     color: $secondaryTextColor;
-    .badge {
-      vertical-align: bottom;
-      background-color: #2d3c46 !important;
-      border: 1px solid $success;
-      font-weight: normal;
-      font-size: 12x;
-      color: $success;
-      height: 32px;
-      padding: 5px 10px;
-    }
   }
 
   .amount-selector-container {
