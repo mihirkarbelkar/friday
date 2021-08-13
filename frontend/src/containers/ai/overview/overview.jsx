@@ -11,7 +11,7 @@ import './style.scss';
 
 const Overview = () => {
   const investmentOverview = useRecoilValue(botInvestmentOverview);
-  console.log(investmentOverview)
+
   const chartData = {
     labels: ['Stocks', 'Mutual Funds', 'Cryptocurrencies'],
     datasets: [
