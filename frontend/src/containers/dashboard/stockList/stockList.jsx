@@ -24,7 +24,7 @@ const StockList = (props) => {
         {list.map((stock) => (
           <tr>
             {cols.includes('label') && (
-            <td onClick={() => history.push(`/${type}/${stock.symbol}`)} style={{ cursor: 'pointer' }}>
+            <td onClick={() => history.push(`/explore/${type}/${stock.symbol}`)} style={{ cursor: 'pointer' }}>
               <div className="d-flex align-items-center">
                 <img src={stock.image} alt="" className="stock-icon" />
                 {stock.label}
