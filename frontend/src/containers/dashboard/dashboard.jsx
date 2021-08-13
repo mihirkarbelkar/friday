@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { sampleState } from "atoms/sample";
+import React from "react";
 import { Tabs, Tab, ListGroup } from "react-bootstrap";
 import CustomCard from "../../components/card";
 import "./dashboard.scss";
