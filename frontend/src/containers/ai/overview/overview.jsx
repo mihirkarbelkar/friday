@@ -84,6 +84,9 @@ const Overview = () => {
                   boxWidth: 20,
                   boxHeight: 20,
                   padding: 10,
+                  font: {
+                    family: 'Montserrat'
+                  },
                   pointStyle: 'circle'
                 }
               }

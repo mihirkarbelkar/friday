@@ -5,7 +5,7 @@ import Routes from './routes';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './errorBoundary';
 import { RecoilRoot } from 'recoil';
-import 'typeface-roboto';
+import 'typeface-montserrat';
 import 'app/scss/rootStyles.scss';
 
 ReactDOM.render(
