@@ -1,12 +1,15 @@
 import React from 'react';
-import { Table } from "react-bootstrap";
+import { Table } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { formatPrice } from 'app/utils/common';
 import '../style.scss';
 
 const StockList = (props) => {
-  const { list, cols, onAddWatchlist } = props;
+  const { list, cols, onAddWatchlist, type } = props;
+  const history = useHistory();
+
   return (
     <Table responsive>
       <thead>
@@ -21,7 +24,7 @@ const StockList = (props) => {
         {list.map((stock) => (
           <tr>
             {cols.includes('label') && (
-            <td>
+            <td onClick={() => history.push(`/${type}/${stock.symbol}`)} style={{ cursor: 'pointer' }}>
               <div className="d-flex align-items-center">
                 <img src={stock.image} alt="" className="stock-icon" />
                 {stock.label}

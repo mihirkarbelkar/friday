@@ -24,20 +24,20 @@ const Dashboard = () => {
         <div className="d-flex explore-investment-wrapper flex-column">
           <div className="d-flex first-row">
             <Card title="Top 5 in Market" className="top-market">
-              <StockList list={dashboardOverview} cols={['label', 'image', 'price', 'chart']} onAddWatchlist={() => null} />
+              <StockList list={dashboardOverview} cols={['label', 'image', 'price', 'chart']} onAddWatchlist={() => null} type="stock" />
             </Card>
             <Card className="all-investments">
               <Tabs defaultActiveKey="self" className="mb-3">
                 <Tab eventKey="self" title="Your Investments">
                   <div className="d-flex flex-column">
                     <Summary summary={investmentSummary} />
-                    <StockList list={investmentSummary?.companies} cols={['label', 'price']} />
+                    <StockList list={investmentSummary?.companies} cols={['label', 'price']} type="stock" />
                   </div>
                 </Tab>
                 <Tab eventKey="ai" title="AI Investments">
                   <div className="d-flex flex-column">
                     <Summary summary={investmentSummary} />
-                    <StockList list={investmentSummary?.companies} cols={['label', 'price']} />
+                    <StockList list={investmentSummary?.companies} cols={['label', 'price']} type="stock" />
                   </div>
                 </Tab>
               </Tabs>
@@ -45,10 +45,10 @@ const Dashboard = () => {
           </div>
           <div className="d-flex second-row">
             <Card title="Top Gainers" className="top-gainers">
-              <StockList list={dashboardOverview} cols={['label', 'price']} />
+              <StockList list={dashboardOverview} cols={['label', 'price']} type="stock" />
             </Card>
             <Card title="Top Losers" className="top-losers">
-              <StockList list={dashboardOverview} cols={['label', 'price']} />
+              <StockList list={dashboardOverview} cols={['label', 'price']} type="stock" />
             </Card>
             <Card title="Latest New on Stocks" className="latest-news">
               <NewsList list={latestNews} />
