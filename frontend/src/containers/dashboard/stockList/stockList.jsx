@@ -36,7 +36,7 @@ const StockList = (props) => {
               <div className="d-flex flex-column align-items-end">
                 <div>&#8377; {formatPrice(stock.currentPrice)}</div>
                 <div className={(stock.currentPrice - stock.previousPrice) > 0 ? 'gain' : 'loss'}>
-                  {formatPrice(stock.currentPrice - stock.previousPrice)} ({((stock.currentPrice - stock.previousPrice) / stock.previousPrice) * 100} %)&nbsp;&nbsp;
+                  {formatPrice(stock.currentPrice - stock.previousPrice)} ({(((stock.currentPrice - stock.previousPrice) / stock.previousPrice) * 100).toFixed(2)} %)&nbsp;&nbsp;
                   {(stock.currentPrice - stock.previousPrice) > 0 ? (<FontAwesomeIcon icon={faArrowUp} />) : (<FontAwesomeIcon icon={faArrowDown} />)}
                 </div>
               </div>
