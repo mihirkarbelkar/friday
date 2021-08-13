@@ -2,10 +2,38 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { Doughnut } from 'react-chartjs-2';
 import { Card } from 'components';
 import './style.scss';
 
 const Overview = () => {
+
+  const chartData = {
+    labels: ['Stocks', 'Mutual Funds', 'Crypto'],
+    datasets: [
+      {
+        fillColor : '#b766df', // Put the gradient here as a fill color
+                strokeColor : "#ff6c23",
+                pointColor : "#fff",
+                pointStrokeColor : "#ff6c23",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "#ff6c23",
+        label: '# of Votes',
+        data: [12, 19, 3],
+        backgroundColor: [
+          '#b766df',
+          '#d73284',
+          '#195ee5',
+        ],
+        borderColor: [
+          '#2f2b50',
+          '#2f2b50',
+          '#2f2b50',
+        ],
+        borderWidth: 3,
+      },
+    ],
+  };
   return (
     <div className="ai-overview-container d-flex">
       <Card title="All Investments" className="all-investments">
@@ -40,7 +68,29 @@ const Overview = () => {
           </tbody>
         </Table>
       </Card>
-      <Card title="AI Investment Breakup" className="ai-breakup"></Card>
+      <Card title="AI Investment Breakup" className="ai-breakup">
+        <Doughnut
+          data={chartData}
+          className="my-3"
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'right',
+                labels: {
+                  color: '#dbdadf',
+                  boxWidth: 20,
+                  boxHeight: 20,
+                  padding: 10,
+                  pointStyle: 'circle'
+                }
+              }
+            }
+          }}  
+        />
+      </Card>
     </div>
   );
 };
