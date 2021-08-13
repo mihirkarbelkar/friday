@@ -9,7 +9,7 @@ import './style.scss';
 const Overview = () => {
 
   const chartData = {
-    labels: ['Stocks', 'Mutual Funds', 'Crypto'],
+    labels: ['Stocks', 'Mutual Funds', 'Cryptocurrencies'],
     datasets: [
       {
         fillColor : '#b766df', // Put the gradient here as a fill color

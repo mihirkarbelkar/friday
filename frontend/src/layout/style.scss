@@ -20,7 +20,8 @@
 
     .navbar-brand {
       background: linear-gradient(45deg, #201e3e, #2b2746);
-      padding-right: 15px;
+      height: 65px;
+      width: 80px;
     }
 
     .navbar-collapse {
@@ -50,8 +51,7 @@
     }
 
     .logo {
-      margin-left: 25px;
-      margin-right: 10px;
+      height: 70%;
     }
 
     .profile-avatar {

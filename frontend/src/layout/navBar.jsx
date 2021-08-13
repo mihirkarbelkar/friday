@@ -23,9 +23,7 @@ const NavBar = () => {
         <Navbar.Brand href="" className="d-flex align-items-center justify-content-center h-100">
           <img
             alt=""
-            src="/logo192.png"
-            width="30"
-            height="30"
+            src="/images/logo.png"
             className="d-inline-block align-top logo"
           />
         </Navbar.Brand>
