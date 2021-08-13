@@ -3,7 +3,6 @@ import { Breadcrumb } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { Header, StepIndicator } from 'components';
 import AIWizard from '../ai-wizard';
-
 import { aiStocks } from 'atoms/aiHelp';
 import './style.scss';
 
