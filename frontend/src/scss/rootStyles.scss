@@ -163,3 +163,29 @@ nav > ol.breadcrumb {
     box-shadow: none;
   }
 }
+
+.table {
+  thead {
+    tr {
+      th {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $secondaryTextColor;
+        font-weight: lighter;
+        padding: 10px 5px;
+        border-bottom-color: #4a4661;
+        border-bottom-width: #4a4661;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border: 1px solid #4a4661;
+      border-width: 0 0 1px 0;
+      td {
+        color: $textColor;
+        padding: 10px 5px;
+      }
+    }
+  }
+}
