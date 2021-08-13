@@ -3,7 +3,7 @@ import { formatPrice } from 'app/utils/common';
 import './style.scss';
 
 const Summary = (props) => {
-  const { summary, list } = props;
+  const { summary } = props;
   return (
     <div className="d-flex dashboard-summary justify-content-around my-3">
       <div className="d-flex flex-column summary-item justify-content-center align-items-center">

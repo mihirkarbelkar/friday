@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Tab, Table } from "react-bootstrap";
+import { Tabs, Tab } from "react-bootstrap";
 import { Card } from 'components';
 import { dashboardStocks, newsList, stockSummary } from 'atoms/dashboard';
 import { useRecoilValue } from 'recoil';
