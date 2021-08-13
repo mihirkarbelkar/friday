@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, Tab, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import Overview from './overview';
 import RoboHi from 'app/images/robo-hi.png';
 import './style.scss';
 
@@ -18,9 +19,9 @@ const AI = () => {
 
   return (
     <div className="ai-tabs h-100">
-      <Tabs defaultActiveKey="stocks" className="mb-3">
+      <Tabs defaultActiveKey="overview" className="mb-3">
         <Tab eventKey="overview" title="Overview">
-          {renderTabContent('stocks', 'stocks')}
+          <Overview />
         </Tab>
         <Tab eventKey="stocks" title="Stocks">
           {renderTabContent('stocks', 'stocks')}

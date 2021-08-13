@@ -1,0 +1,25 @@
+@import 'app/scss/base';
+
+.ai-overview-container {
+  .all-investments {
+    flex: 0 0 58%;
+    margin-right: 30px;
+
+    .table {
+      tr {
+        th:nth-child(4), td:nth-child(4) {
+          text-align: right;
+          &.positive {
+            color: $success;
+          }
+          &.negative {
+            color: $danger;
+          }
+        }
+      }
+    }
+  }
+  .ai-breakup {
+    flex: 0 0 40%;
+  }
+}
