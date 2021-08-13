@@ -28,3 +28,24 @@ export const aiMutualFunds = atom({
     expiryTime: null
   }
 });
+
+export const aiOverview = atom({
+  key: 'aiOverview',
+  default: [
+    {
+      invested: 100000,
+      returns: 124899,
+      type: 'Cryptocurrencies'
+    },
+    {
+      invested: 50000,
+      returns: 58649,
+      type: 'Mutual Funds'
+    },
+    {
+      invested: 90000,
+      returns: 143023,
+      type: 'Stocks'
+    }
+  ]
+});

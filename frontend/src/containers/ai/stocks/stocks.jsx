@@ -3,7 +3,6 @@ import { Breadcrumb } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { Header, StepIndicator } from 'components';
 import AIWizard from '../ai-wizard';
-
 import { aiStocks } from 'atoms/aiHelp';
 import './style.scss';
 
@@ -19,7 +18,7 @@ const Stocks = () => {
       </Breadcrumb>
       <Header title="AI Help" />
       <StepIndicator total={3} current={step} onClick={setStep} />
-      <AIWizard step={step} atom={aiStocks} onContinue={setStep} onFinish={() => null} onCancel={() => history.push('/ai')} />
+      <AIWizard step={step} atom={aiStocks} onContinue={setStep} onFinish={() => history.push('/ai')} onCancel={() => history.push('/ai')} />
     </div>
   );
 };

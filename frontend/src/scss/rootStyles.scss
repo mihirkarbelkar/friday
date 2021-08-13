@@ -2,11 +2,11 @@
 
 @mixin fonts() {
   $types: (
-      ('bold', 'Roboto-Bold'),
-      ('regular', 'Roboto-Regular'),
-      ('light', 'Roboto-Light'),
-      ('italic', 'Roboto-Italic'),
-      ('thin', 'Roboto-Thin'),
+      ('bold', 'Montserrat-Bold'),
+      ('regular', 'Montserrat-Regular'),
+      ('light', 'Montserrat-Light'),
+      ('italic', 'Montserrat-Italic'),
+      ('thin', 'Montserrat-Thin'),
   );
   @each $type in $types {
     .font-#{nth($type, 1)} { font-family: nth($type, 2); }
@@ -19,7 +19,7 @@ html, body, #root, #root > div {
   height: 100%;
 }
 body {
-  font-family: 'Roboto';
+  font-family: 'Montserrat';
   font-size: 14px;
   margin: 0px;
   color: $textColor;
@@ -68,7 +68,7 @@ body {
   background: linear-gradient(to right, #b374ea, #2f63e0);
   border: none;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 15px;
   &:hover {
     background: linear-gradient(to left, #b374ea, #2f63e0);
   }
@@ -171,7 +171,7 @@ nav > ol.breadcrumb {
         text-transform: uppercase;
         letter-spacing: 2px;
         color: $secondaryTextColor;
-        font-weight: lighter;
+        font-weight: 500;
         padding: 10px 5px;
         border-bottom-color: #4a4661;
         border-bottom-width: #4a4661;

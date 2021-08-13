@@ -4,22 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { Doughnut } from 'react-chartjs-2';
 import { Card } from 'components';
+import { botInvestmentOverview } from 'selectors/aiHelp';
+import { useRecoilValue } from 'recoil';
+import { formatPrice } from 'app/utils/common';
 import './style.scss';
 
 const Overview = () => {
-
+  const investmentOverview = useRecoilValue(botInvestmentOverview);
+  console.log(investmentOverview)
   const chartData = {
-    labels: ['Stocks', 'Mutual Funds', 'Crypto'],
+    labels: ['Stocks', 'Mutual Funds', 'Cryptocurrencies'],
     datasets: [
       {
-        fillColor : '#b766df', // Put the gradient here as a fill color
-                strokeColor : "#ff6c23",
-                pointColor : "#fff",
-                pointStrokeColor : "#ff6c23",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "#ff6c23",
-        label: '# of Votes',
-        data: [12, 19, 3],
+        data: investmentOverview.map((item) => item.invested),
         backgroundColor: [
           '#b766df',
           '#d73284',
@@ -42,29 +39,19 @@ const Overview = () => {
             <tr>
               <th>Overview</th>
               <th>Invested</th>
-              <th>Returns</th>
-              <th>Return Percentage</th>
+              <th>Current Value</th>
+              <th>P &amp; L</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><FontAwesomeIcon icon={faChevronCircleDown} /> <span className="mx-1">Stocks</span></td>
-              <td>$ 100,000</td>
-              <td>$ 200,000</td>
-              <td className="positive">100%</td>
-            </tr>
-            <tr>
-              <td><FontAwesomeIcon icon={faChevronCircleDown} /> <span className="mx-1">Crypto</span></td>
-              <td>$ 100,000</td>
-              <td>$ 200,000</td>
-              <td className="negative">-0.33%</td>
-            </tr>
-            <tr>
-              <td><FontAwesomeIcon icon={faChevronCircleDown} /> <span className="mx-1">Mutual Funds</span></td>
-              <td>$ 100,000</td>
-              <td>$ 200,000</td>
-              <td className="positive">100%</td>
-            </tr>
+            {investmentOverview.map((item) => (
+              <tr>
+                <td><FontAwesomeIcon icon={faChevronCircleDown} /> <span className="mx-1">{item.type}</span></td>
+                <td>&#8377; {formatPrice(item.invested)}</td>
+                <td>&#8377; {formatPrice(item.returns)}</td>
+                <td className={item.profitPercentage > 0 ? 'positive' : 'negative'}>{formatPrice(item.profitPercentage)} %</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </Card>
@@ -84,6 +71,9 @@ const Overview = () => {
                   boxWidth: 20,
                   boxHeight: 20,
                   padding: 10,
+                  font: {
+                    family: 'Montserrat'
+                  },
                   pointStyle: 'circle'
                 }
               }

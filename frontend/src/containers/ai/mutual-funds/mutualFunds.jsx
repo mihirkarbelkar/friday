@@ -19,7 +19,7 @@ const MutualFunds = () => {
       </Breadcrumb>
       <Header title="AI Help" />
       <StepIndicator total={3} current={step} onClick={setStep} />
-      <AIWizard step={step} atom={aiMutualFunds} onContinue={setStep} onFinish={() => null} onCancel={() => history.push('/ai')} />
+      <AIWizard step={step} atom={aiMutualFunds} onContinue={setStep} onFinish={() => history.push('/ai')} onCancel={() => history.push('/ai')} />
     </div>
   );
 };
