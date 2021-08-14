@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Tabs, Tab } from "react-bootstrap";
 import { Card } from "components";
 import {
@@ -7,8 +7,9 @@ import {
   stockSummary,
   gainersList,
   losersList,
+  aiStockSummary
 } from "atoms/dashboard";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import StockList from "./stockList";
 import NewsList from "./newsList";
 import Summary from "./summary";
@@ -24,6 +25,7 @@ const InvestmentBlock = (props) => {
     dashboardOverview,
     latestNews,
     investmentSummary,
+    aiSummary,
     type,
     gainersData,
     loserData,
@@ -53,9 +55,9 @@ const InvestmentBlock = (props) => {
             </Tab>
             <Tab eventKey="ai" title="AI Investments">
               <div className="d-flex flex-column">
-                <Summary summary={investmentSummary} />
+                <Summary summary={aiSummary} />
                 <StockList
-                  list={investmentSummary?.companies}
+                  list={aiSummary?.companies}
                   cols={["label", "price"]}
                   type={`${type}`}
                 />
@@ -90,8 +92,34 @@ const Dashboard = () => {
   const dashboardOverview = useRecoilValue(dashboardStocks);
   const latestNews = useRecoilValue(newsList);
   const investmentSummary = useRecoilValue(stockSummary);
+  const aiSummary = useRecoilValue(aiStockSummary);
   const gainersData = useRecoilValue(gainersList);
   const loserData = useRecoilValue(losersList);
+  const [hack, setHack] = useRecoilState(dashboardStocks);
+  const [hack1, setHack1] = useRecoilState(stockSummary);
+
+  useEffect(() => {
+    const randomNum = (min, max) => {
+      return Math.random() * (max - min) + min;
+    }
+    setInterval(() => {
+      setHack({ ...hack, crypto: hack['crypto'].map((cryp) => {
+        const newCurrentPrice = randomNum(cryp.currentPrice, cryp.previousPrice);
+        if (cryp.symbol === 'BTC') {
+          const percentageChange = (((newCurrentPrice - cryp.previousPrice) / cryp.previousPrice) * 100);
+          setHack1({ ...hack1, crypto: {
+            ...investmentSummary['crypto'],
+            returns: (investmentSummary['crypto'].returns + (investmentSummary['crypto'].invested/100)*percentageChange),
+            companies: investmentSummary['crypto'].companies.map((com) => {
+              return {...com, currentPrice: newCurrentPrice };
+            })
+          }});
+          console.log(hack1)  
+        }
+        return { ...cryp, currentPrice: parseFloat(newCurrentPrice.toFixed(2)) };
+      })})
+    }, 2000);
+  }, []);
   return (
     <Tabs defaultActiveKey="stocks" className="mb-3">
       <Tab eventKey="stocks" title="Stocks">
@@ -100,6 +128,7 @@ const Dashboard = () => {
           dashboardOverview={dashboardOverview["stocks"]}
           latestNews={latestNews["stocks"]}
           investmentSummary={investmentSummary["stocks"]}
+          aiSummary={aiSummary["stocks"]}
           tab={"Stocks"}
           gainersData={gainersData["stocks"]}
           loserData={loserData["stocks"]}
@@ -111,6 +140,7 @@ const Dashboard = () => {
           dashboardOverview={dashboardOverview["mf"]}
           latestNews={latestNews["mf"]}
           investmentSummary={investmentSummary["mf"]}
+          aiSummary={aiSummary["mf"]}
           tab={"Mutual Funds"}
           gainersData={gainersData["stocks"]}
           loserData={loserData["stocks"]}
@@ -122,6 +152,7 @@ const Dashboard = () => {
           dashboardOverview={dashboardOverview["crypto"]}
           latestNews={latestNews["crypto"]}
           investmentSummary={investmentSummary["crypto"]}
+          aiSummary={aiSummary["crypto"]}
           tab={"Crypto"}
           gainersData={gainersData["stocks"]}
           loserData={loserData["stocks"]}
