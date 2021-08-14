@@ -1,0 +1,110 @@
+@import 'app/scss/base';
+
+@mixin backgroundPos() {
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.step-quiz-container {
+  height: calc(100% - 146px);
+
+  .step-quiz-1 {
+    background: url('../../../images/invest-robo.png');
+    @include backgroundPos();
+    
+  }
+  .step-quiz-2 {
+    background: url('../../../images/return-robo.png');
+    @include backgroundPos();
+    
+  }
+  .step-quiz-3 {
+    background: url('../../../images/terms-robo.png');
+    @include backgroundPos();
+  }
+
+  .wizard-question {
+    color: $secondaryTextColor;
+  }
+
+  .amount-selector-container {
+    .amount-selection-button {
+      background-color: $secondaryTextColor;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-right: 20px;
+      cursor: pointer;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px solid $textColor;
+      }
+    }
+    .other-amount-box {
+      span, input {
+        padding: 3px 10px;
+        background-color: transparent;
+        color: $textColor;
+      }
+      input:focus {
+        background-color: transparent !important;
+      }
+    }
+
+    .other-amount-form {
+      button {
+        background-color: transparent;
+        background: none;
+        padding: 0px 20px !important;
+    
+        & > svg {
+          transform: rotate(90deg);
+          cursor: pointer;
+        }
+      }
+    }
+    
+  }
+
+  
+
+  .react-datepicker-wrapper {
+    .react-datepicker__input-container {
+      display: flex;
+    }
+
+    width: 150px;
+    otherdate {
+      background-color: $secondaryTextColor;
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-right: 20px;
+      cursor: pointer;
+      border: 1px solid transparent;
+  
+      &:hover {
+        border: 1px solid $textColor;
+      }
+    }
+    otherdate {
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .terms-wrapper {
+    width: 800px;
+    height: 300px;
+    padding: 30px;
+    overflow-y: auto;
+    background-color: $tertiaryColor;
+    border-radius: 5px; 
+  }
+
+  .btn-primary.negative {
+    margin-right: 20px;
+  }
+}

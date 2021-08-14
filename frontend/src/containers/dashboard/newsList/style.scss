@@ -1,0 +1,16 @@
+@import 'app/scss/base';
+
+.latest-news {
+  tbody {
+    tr {
+      td.news-image {
+        width: 40px;
+        img {
+          height: 30px;
+          width: 30px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

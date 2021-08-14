@@ -1,0 +1,13 @@
+@import 'app/scss/base';
+
+.details-wrapper {
+  .first-row {
+    .detail-graph-card {
+      flex: 0 0 60%;
+      margin-right: 30px;
+    }
+    .buy-sell-card {
+      flex: 0 0 38%;
+    }
+  }
+}

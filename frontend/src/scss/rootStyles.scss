@@ -1,0 +1,233 @@
+@import 'base';
+
+@mixin fonts() {
+  $types: (
+      ('bold', 'Montserrat-Bold'),
+      ('regular', 'Montserrat-Regular'),
+      ('light', 'Montserrat-Light'),
+      ('italic', 'Montserrat-Italic'),
+      ('thin', 'Montserrat-Thin'),
+  );
+  @each $type in $types {
+    .font-#{nth($type, 1)} { font-family: nth($type, 2); }
+    %font-#{nth($type, 1)} { font-family: nth($type, 2); }
+  }
+}
+@include fonts();
+
+html, body, #root, #root > div {
+  height: 100%;
+}
+body {
+  font-family: 'Montserrat';
+  font-size: 14px;
+  margin: 0px;
+  color: $textColor;
+  height: 100%;
+  background-color: $primaryColor;
+}
+
+.gradient-border {
+  @include gradientBorder();
+}
+
+.nav-tabs {
+  border-bottom: 2px solid $borderColor;
+  .nav-item {
+    .nav-link {
+      color: $secondaryTextColor;
+      padding: 15px 20px;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-width: 0px 0 5px 0;
+      border-color: transparent;
+
+      &:hover, &:focus {
+        color: $textColor;
+        border-color: transparent !important;
+      }
+      &.active {
+        color: $textColor;
+        background-color: transparent;
+        border-width: 0px 0 5px 0;
+
+        border-style: solid;
+        border-image: linear-gradient(to left, #2f63e0, #b374ea) 
+                100% 0 100% 0/0px 0 3px 0 stretch;
+      }
+    }
+  }
+}
+.secondary-text-color{
+  color: $secondaryTextColor;
+}
+
+.btn-primary {
+  background-color: none;
+  background: linear-gradient(to right, #b374ea, #2f63e0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  &:hover {
+    background: linear-gradient(to left, #b374ea, #2f63e0);
+  }
+  &.negative {
+    background: none;
+    background-color: $tertiaryTextColor;
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+nav > ol.breadcrumb {
+  .breadcrumb-item+.breadcrumb-item::before {
+    content: '>';
+  }
+  a {
+    color: $textColor;
+    text-decoration: none;
+  }
+}
+
+.form-control:focus {
+  border-color: $textColor;
+  box-shadow: none !important;
+}
+
+.react-datepicker {
+  background-color: $secondaryColor;
+  border: none;
+
+  .react-datepicker__triangle {
+    &::after, &::before {
+      border-bottom-color: $secondaryColor !important;
+    }
+  }
+
+  .react-datepicker__current-month {
+    color: $textColor;
+  }
+
+  .react-datepicker__month {
+    padding: 15px;
+    border: none;
+  }
+
+  .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+    color: $textColor;
+  }
+
+  .react-datepicker__navigation {
+    top: 15px;
+  }
+
+  .react-datepicker__header {
+    background-color: $secondaryColor;
+    padding: 15px;
+    border: none;
+  }
+
+  .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range {
+    background: linear-gradient(to right, #b374ea, #2f63e0);
+  }
+
+  .react-datepicker__day:hover {
+    color: #000;
+  }
+
+  .react-datepicker__day--disabled {
+    color: $secondaryTextColor;
+    &:hover {
+      color: $secondaryTextColor;
+    }
+    cursor: not-allowed;
+  }
+}
+
+.form-check-input {
+  height: 25px;
+  width: 25px;
+  margin-top: 3px;
+  margin-right: 15px;
+
+  &:checked {
+    background-color: $success;
+    border-color: $success;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.table {
+  thead {
+    tr {
+      th {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $secondaryTextColor;
+        font-weight: 500;
+        padding: 10px 5px;
+        border-bottom-color: #4a4661;
+        border-bottom-width: #4a4661;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border: 1px solid #4a4661;
+      border-width: 0 0 1px 0;
+      td {
+        color: $textColor;
+        padding: 10px 5px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gain {
+  color: $success;
+}
+
+.loss {
+  color: $danger;
+}
+
+.nav-pills {
+  .nav-link {
+    color: $textColor;
+  }
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: none;
+  background: linear-gradient(to right, #b374ea, #2f63e0);
+}
+
+.form-floating>label {
+  color: $secondaryTextColor;
+}
+
+.badge {
+  vertical-align: bottom;
+  background-color: #2d3c46 !important;
+  border: 1px solid $success;
+  font-weight: normal;
+  font-size: 12x;
+  color: $success;
+  height: 32px;
+  padding: 5px 10px;
+}
